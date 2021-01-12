@@ -1,4 +1,4 @@
 baseURL = "https://pedrofelgueiras.com/"
 languageCode = "en-us"
-title = "My New Hugo Site"
+title = "Pedro Felgueiras Blog"
 theme = "ananke"
