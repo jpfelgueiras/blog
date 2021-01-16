@@ -22,10 +22,7 @@ jobs:
         run: hugo --minify -D
       
       - name: copy file
-        uses: canastro/copy-file-action@master
-        with:
-          source: "static/*"
-          target: "public"
+        run: cp ./static/ ./public
         
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
