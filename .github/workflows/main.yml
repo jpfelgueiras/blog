@@ -27,7 +27,7 @@ jobs:
           github_token: ${{ secrets.TOKEN }}
           publish_dir: ./public
         if: ${{ github.ref == 'refs/heads/master' }}
-        
+
       - name: Pushes to another repository
         id: push_directory
         uses: cpina/github-action-push-to-another-repository@cp_instead_of_deleting
@@ -44,3 +44,4 @@ jobs:
         env:
           CLOUDFLARE_ZONE: ${{ secrets.CLOUDFLARE_ZONE }}
           CLOUDFLARE_TOKEN: ${{ secrets.CLOUDFLARE_TOKEN }}
+        if: ${{ github.ref == 'refs/heads/master' }}
