@@ -20,6 +20,12 @@ jobs:
         # remove --minify tag if you do not need it
         # docs: https://gohugo.io/hugo-pipes/minification/
         run: hugo --minify -D
+      
+      - name: copy file
+        uses: canastro/copy-file-action@master
+        with:
+          source: "static/*"
+          target: "public"
         
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
