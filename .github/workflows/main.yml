@@ -20,6 +20,10 @@ jobs:
 
       - name: Build
         run: hugo --minify --log --templateMetrics --templateMetricsHints -verboseLog -D
+      
+      - name: CNAME staging
+        run: echo "pedrofelgueiras.fun" > ./public/CNAME
+        if: ${{ github.ref == 'refs/heads/develop' }}
 
       - name: Deploy to staging
         id: push_directory
@@ -32,6 +36,11 @@ jobs:
           destination-repository-name: 'blog-staging'
           user-email: jpfelgueiras@gmail.com
         if: ${{ github.ref == 'refs/heads/develop' }}
+      
+      - name: CNAME production
+        run: echo "pedrofelgueiras.com" > ./public/CNAME
+        if: ${{ github.ref == 'refs/heads/main' }}
+
         
       - name: Deploy to production
         uses: peaceiris/actions-gh-pages@v3
