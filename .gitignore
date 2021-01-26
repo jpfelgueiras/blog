@@ -1,3 +1,4 @@
 !*.png
 !.gitignore
 public/
+resources/_gen/
